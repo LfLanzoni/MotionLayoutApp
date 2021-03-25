@@ -1,0 +1,54 @@
+<MotionScene xmlns:motion="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- A transition describes an animation via start and end state -->
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/end"
+        motion:duration="2000">
+        <!-- MotionLayout will handle clicks on @id/star to "toggle" the animation between the start and end -->
+        <KeyFrameSet >
+            <KeyAttribute
+                motion:motionTarget="@+id/chuck"
+                motion:framePosition="0"
+                android:rotation="360" />
+            <KeyAttribute
+                motion:motionTarget="@+id/chuck"
+                motion:framePosition="1"
+                android:scaleY="1.5"
+                android:scaleX="1.5"/>
+
+        </KeyFrameSet>
+        <OnClick motion:targetId="@+id/title_chuck" />
+
+    </Transition>
+
+    <!-- Constraints to apply at the start of the animation -->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/chuck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:alpha="0.0" />
+
+    </ConstraintSet>
+
+    <!-- Constraints to apply at the end of the animation -->
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/chuck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:alpha="1.0"
+            android:layout_marginTop="244dp"
+            motion:layout_constraintBottom_toTopOf="@id/title_chuck"
+            motion:layout_constraintVertical_bias="1.0"
+            motion:layout_constraintHorizontal_bias="0.49" />
+
+    </ConstraintSet>
+</MotionScene>

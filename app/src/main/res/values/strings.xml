@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MotionLayoutApp</string>
+    <string name="icon_android">Icon Android</string>
+    <string name="titulo_chuck_norris_app">Titulo Chuck Norris App</string>
+</resources>
